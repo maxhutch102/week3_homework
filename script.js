@@ -8,32 +8,47 @@ const strings = {
   special: "!@#$%^&*"
 };
 
-var passwordLength = prompt("Choose a password length between 1-128 characters.");
-alert("You picked " + passwordLength + " characters.");
-var charLowercase = confirm("Would you like to use lowercase characters?");
-if (charLowercase === true) {
-  alert("You want to include lowercase characters.");
-} else {
-  alert("You do not want to include lowercase characters.");
-};
-var charUppercase = confirm("Would you like to use uppercase characters?")
-if (charUppercase === true) {
-  alert("You want to include uppercase characters.");
-} else {
-  alert("You do not want to include uppercase characters.");
-};
-var charNumeric = confirm("Would you like to use numeric characters?");
-if (charNumeric === true) {
-  alert("You do want to include numeric characters.");
-} else {
-  alert("You do not want to include numeric characters.");
-};
-var charSpecial = confirm("Would you like to use special characters?");
-if (charSpecial === true) {
-  alert("You do want to include special characters.");
-} else {
-  alert("You do not want to include special characters.");
-};
+var hello = confirm("Would you like to generate a new password?");
+
+
+if (hello === true) {
+  
+  var passwordLength = prompt("Choose a password length between 8-128 characters.");
+  var size = parseInt(passwordLength);
+  if (size < 8) {
+    alert("You must choose a number greater then 7.");
+  } else if (size > 128) {
+    alert("You must choose a number less than 129.")
+  } else {
+    alert("You picked " + passwordLength + " characters.");
+  }
+
+  var charLowercase = confirm("Would you like to use lowercase characters?");
+  if (charLowercase === true) {
+    alert("You want to include lowercase characters.");
+  } else {
+    alert("You do not want to include lowercase characters.");
+  };
+  var charUppercase = confirm("Would you like to use uppercase characters?")
+  if (charUppercase === true) {
+    alert("You want to include uppercase characters.");
+  } else {
+    alert("You do not want to include uppercase characters.");
+  };
+  var charNumeric = confirm("Would you like to use numeric characters?");
+  if (charNumeric === true) {
+    alert("You do want to include numeric characters.");
+  } else {
+    alert("You do not want to include numeric characters.");
+  };
+  var charSpecial = confirm("Would you like to use special characters?");
+  if (charSpecial === true) {
+    alert("You do want to include special characters.");
+  } else {
+    alert("You do not want to include special characters.");
+  };
+}
+
 
 
 
@@ -71,9 +86,9 @@ function generatePassword() {
     var char = choiceString.charAt(Math.floor(Math.random() * choiceAmount));
     passcode.push(char);
 
-    
-  }
   
+  }
+
   var passcodeString = passcode.join('');
   return passcodeString;
 
